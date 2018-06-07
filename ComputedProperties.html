@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computed Properties</title>
+</head>
+
+<body>
+	<div id="app">
+	<!-- 	<h1>Skill: {{ skill }}</h1>
+		<input type="text" v-model="points">
+ -->
+		<h1>{{ fullName }}</h1>
+		<input type="text" v-model="first" placeholder="First Name">
+		<input type="text" v-model="last" placeholder="Last Name">
+	</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+	new Vue ({
+		el: '#app',
+		data: {
+			first: 'Kiara',
+			last: 'Contreras',
+		},
+
+		computed: {
+			fullName: function() {
+				return this.first + ' ' + this.last;
+			}
+		}
+		// data: {
+		// 	points: 500
+		// },
+		// computed: {
+		// 	skill: function() {
+		// 		if (this.points <= 100) {
+		// 			return 'Beginner';
+		// 		}
+
+		// 		return 'Advanced';
+		// 	}
+		// }
+	});
+</script>
+
+</html>

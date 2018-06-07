@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="app">
+		<counter heading="Likes"></counter>	
+		<counter heading="Dislikes"></counter>	
+	</div>
+
+	<template id="counter-template">
+		<div>
+			<h1>{{ heading }}</h1>		
+			<button @click="count += 1">Increment Count: {{ count }}</button>
+		</div>
+	</template>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+
+// 	global component
+	Vue.component('counter', {
+		template: '#counter-template',
+		props: ['heading'],
+		data: function (){
+			return {count: 0}
+		}
+	});
+
+	new Vue ({
+		el: '#app'
+	});
+</script>
+</html>

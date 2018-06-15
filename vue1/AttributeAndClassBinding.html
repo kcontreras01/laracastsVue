@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attribute Binding</title>
+
+	<style type="text/css">
+		.is-loading { background: red; }
+	</style>
+</head>
+<body>
+
+	<div id="app">
+		<button :class="{ 'is-loading: true' }">Click me</button>	
+	</div>
+
+	<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+
+	<script>
+		new Vue({
+			el:'#app',
+			data: {
+				className: 'color-red'
+			}
+		})		
+
+	</script>
+</body>
+</html>
